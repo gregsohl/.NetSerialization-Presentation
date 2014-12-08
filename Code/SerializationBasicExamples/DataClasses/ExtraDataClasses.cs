@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Xml.Serialization;
 
-namespace SerializationBasicExamples
+namespace SerializationBasicExamples.DataClasses
 {
 	[Serializable]
 	public class SomeExtraData

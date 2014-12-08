@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using SerializationBasicExamples.DataClasses;
 
 #endregion Namespaces
 
@@ -37,6 +38,9 @@ namespace SerializationBasicExamples
 			//Console.WriteLine(xmlResult);
 
 	        #endregion Xml Serialization with Extra Types
+
+	        bfResult = BinaryFormatterExample.CustomSerialize();
+	        var plainClassSerializableBackingFieldsCustom = BinaryFormatterExample.CustomDeserialize(bfResult);
 
 	        Console.ReadLine();
         }

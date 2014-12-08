@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using SerializationBasicExamples.DataClasses;
 
 namespace SerializationBasicExamples
 {

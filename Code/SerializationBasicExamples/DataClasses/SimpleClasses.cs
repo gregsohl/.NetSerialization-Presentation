@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
-namespace SerializationBasicExamples
+namespace SerializationBasicExamples.DataClasses
 {
 	public enum TestEnum
 	{
