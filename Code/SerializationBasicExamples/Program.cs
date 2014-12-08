@@ -12,17 +12,33 @@ namespace SerializationBasicExamples
     {
         static void Main(string[] args)
         {
-			byte[] bfResult = BinaryFormatterExample.SimpleSerialize();
-			string xmlResult = XmlSerializerExample.SimpleSerialize();
-			byte[] cfResult = CompactFormatterExample.SimpleSerialize();
-			string jsonResult = JsonNetExample.SimpleSerialize();
+	        #region Simple Serialize
+
+	        byte[] bfResult = BinaryFormatterExample.SimpleSerialize();
+	        string xmlResult = XmlSerializerExample.SimpleSerialize();
+	        byte[] cfResult = CompactFormatterExample.SimpleSerialize();
+	        string jsonResult = JsonNetExample.SimpleSerialize();
+
+	        #endregion Simple Serialize
+
+	        #region Simple Deserialize
 
 	        var bfDeserialized = BinaryFormatterExample.SimpleDeserialize(bfResult);
-			var cfDeserialized = CompactFormatterExample.SimpleDeserialize(bfResult);
 	        var xmlDeserialized = XmlSerializerExample.SimpleDeserialize(xmlResult);
-			var jsonDeserialized = JsonNetExample.SimpleDeserialize(jsonResult);
+	        var cfDeserialized = CompactFormatterExample.SimpleDeserialize(cfResult);
+	        var jsonDeserialized = JsonNetExample.SimpleDeserialize(jsonResult);
 
+	        #endregion Simple Deserialize
 
+	        #region Xml Serialization with Extra Types
+
+			//xmlResult = XmlSerializerExample.SerializeWithExtraTypes();
+			//XmlSerializerExample.SimpleDeserializeWithExtraTypes(xmlResult);
+			//Console.WriteLine(xmlResult);
+
+	        #endregion Xml Serialization with Extra Types
+
+	        Console.ReadLine();
         }
     }
 }
