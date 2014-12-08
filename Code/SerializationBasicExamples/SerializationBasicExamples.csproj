@@ -58,6 +58,7 @@
     <Compile Include="BinaryFormatterExample.cs" />
     <Compile Include="CompactFormatterEx.cs" />
     <Compile Include="CompactFormatterExample.cs" />
+    <Compile Include="DataClasses\JobInfo.cs" />
     <Compile Include="DataClasses\CustomSerializationClasses.cs" />
     <Compile Include="DataClasses\ExtraDataClasses.cs" />
     <Compile Include="SerializationAttributesClassSerializable.cs" />
