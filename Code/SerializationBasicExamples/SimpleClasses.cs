@@ -10,8 +10,6 @@ namespace SerializationBasicExamples
 		SomeValue2 = 2,
 	}
 
-	#region PlainClass
-
 	public class PlainClassUnattributed
 	{
 		public int Field1 { get; set; }
@@ -35,41 +33,40 @@ namespace SerializationBasicExamples
     [CompactFormatter.Attributes.Serializable]
 	public class PlainClassSerializable
 	{
-		public int Field1 { get; set; }
+		public int Property1 { get; set; }
 
-		public string Field2 { get; set; }
+		public string Property2 { get; set; }
 
-		public TestEnum TestEnumField { get; set; }
+		public TestEnum PropertyEnum1 { get; set; }
 
 		public static PlainClassSerializable CreateExampleData()
 		{
 			return new PlainClassSerializable()
 			{
-				Field1 = 42,
-				Field2 = "Some string",
-				TestEnumField = TestEnum.SomeValue1
+				Property1 = 42,
+				Property2 = "Some string",
+				PropertyEnum1 = TestEnum.SomeValue1
 			};
 		}
 	}
 
 	[Serializable]
 	[CompactFormatter.Attributes.Serializable]
-	[ProtoBuf.ProtoContract]
 	public class PlainClassSerializableBackingFields
 	{
-		public int Field1
+		public int Property1
 		{
 			get { return m_Field1; }
 			set { m_Field1 = value; }
 		}
 
-		public string Field2
+		public string Property2
 		{
 			get { return m_Field2; }
 			set { m_Field2 = value; }
 		}
 		
-		public TestEnum TestEnumField
+		public TestEnum PropertyEnum1
 		{
 			get { return m_TestEnumField; }
 			set { m_TestEnumField = value; }
@@ -79,9 +76,9 @@ namespace SerializationBasicExamples
 		{
 			return new PlainClassSerializableBackingFields()
 			{
-				Field1 = 42,
-				Field2 = "Some string",
-				TestEnumField = TestEnum.SomeValue1
+				Property1 = 42,
+				Property2 = "Some string",
+				PropertyEnum1 = TestEnum.SomeValue1
 			};
 		}
 
@@ -90,29 +87,4 @@ namespace SerializationBasicExamples
 		private TestEnum m_TestEnumField;
 
 	}
-
-	[DataContract]
-	public class PlainClassDataContract
-	{
-		[DataMember]
-		public int Field1 { get; set; }
-
-		[DataMember]
-		public string Field2 { get; set; }
-
-		[DataMember]
-		public TestEnum TestEnumField { get; set; }
-
-		public static PlainClassDataContract CreateExampleData()
-		{
-			return new PlainClassDataContract()
-			{
-				Field1 = 42,
-				Field2 = "Some string",
-				TestEnumField = TestEnum.SomeValue1
-			};
-		}
-	}
-
-	#endregion PlainClass
 }

@@ -12,7 +12,6 @@ namespace SerializationBasicExamples
             var serializer = new XmlSerializer(typeof(PlainClassSerializable));
 
 			var output = new StringBuilder();
-            var settings = new XmlWriterSettings { Encoding = Encoding.UTF8, Indent = false };
 
 			var objectToSerialize = PlainClassSerializable.CreateExampleData();
 
@@ -23,12 +22,23 @@ namespace SerializationBasicExamples
 			//	byte[] buffer = stream.ToArray();
 			//}
 
-            using (var xmlWriter = XmlWriter.Create(output, settings))
+            using (var textWriter = new StringWriter(output))
             {
-                serializer.Serialize(xmlWriter, objectToSerialize);
+                serializer.Serialize(textWriter, objectToSerialize);
             }
 
             return output.ToString();
         }
+
+		public static PlainClassSerializable SimpleDeserialize(string serializedData)
+		{
+			var serializer = new XmlSerializer(typeof (PlainClassSerializable));
+
+			using (var textReader = new StringReader(serializedData))
+			{
+				object result = serializer.Deserialize(textReader);
+				return (PlainClassSerializable)result;
+			}
+		}
     }
 }

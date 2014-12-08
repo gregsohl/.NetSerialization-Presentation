@@ -19,5 +19,22 @@ namespace SerializationBasicExamples
 	            return buffer;
             }
         }
+
+		public static PlainClassSerializableBackingFields SimpleDeserialize(byte[] serializedData)
+		{
+			var serializer = new CompactFormatterEx();
+
+			using (var stream = new MemoryStream(serializedData))
+			{
+				object result = serializer.Deserialize(stream);
+				if (result is PlainClassSerializableBackingFields)
+				{
+					return (PlainClassSerializableBackingFields)result;
+				}
+
+				return null;
+			}
+		}
+
     }
 }

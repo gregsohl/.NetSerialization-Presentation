@@ -18,5 +18,18 @@ namespace SerializationBasicExamples
 
 			return result;
         }
+
+		public static PlainClassSerializableBackingFields SimpleDeserialize(string serializedData)
+		{
+			var settings = new JsonSerializerSettings()
+			{
+				ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
+				PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+			};
+
+			var result = JsonConvert.DeserializeObject<PlainClassSerializableBackingFields>(serializedData, settings);
+
+			return result;
+		}
     }
 }

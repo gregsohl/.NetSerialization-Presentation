@@ -58,12 +58,12 @@
     <Compile Include="BinaryFormatterExample.cs" />
     <Compile Include="CompactFormatterEx.cs" />
     <Compile Include="CompactFormatterExample.cs" />
+    <Compile Include="SerializationAttributesClassSerializable.cs" />
     <Compile Include="JsonNetExample.cs" />
     <Compile Include="XmlSerializerExample.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleClasses.cs" />
-    <Compile Include="TestClasses.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
