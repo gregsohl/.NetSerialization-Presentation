@@ -42,6 +42,9 @@ namespace SerializationBasicExamples
 	        bfResult = BinaryFormatterExample.CustomSerialize();
 	        var plainClassSerializableBackingFieldsCustom = BinaryFormatterExample.CustomDeserialize(bfResult);
 
+	        xmlResult = XmlSerializerExample.CustomSerialize();
+	        var classSerializableBackingFieldsCustom = XmlSerializerExample.CustomDeserialize(xmlResult);
+
 	        Console.ReadLine();
         }
     }

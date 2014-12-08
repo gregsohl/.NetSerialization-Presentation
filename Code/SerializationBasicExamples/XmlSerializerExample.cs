@@ -63,5 +63,32 @@ namespace SerializationBasicExamples
 				return (MyChildClass)result;
 			}
 		}
+
+		public static string CustomSerialize()
+		{
+			var serializer = new XmlSerializer(typeof(PlainClassSerializableBackingFieldsCustomXml));
+
+			var output = new StringBuilder();
+
+			var objectToSerialize = PlainClassSerializableBackingFieldsCustomXml.CreateExampleData();
+
+			using (var textWriter = new StringWriter(output))
+			{
+				serializer.Serialize(textWriter, objectToSerialize);
+			}
+
+			return output.ToString();
+		}
+
+		public static PlainClassSerializableBackingFieldsCustomXml CustomDeserialize(string serializedData)
+		{
+			var serializer = new XmlSerializer(typeof(PlainClassSerializableBackingFieldsCustomXml));
+
+			using (var textReader = new StringReader(serializedData))
+			{
+				object result = serializer.Deserialize(textReader);
+				return (PlainClassSerializableBackingFieldsCustomXml)result;
+			}
+		}
     }
 }
