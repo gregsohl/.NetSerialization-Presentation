@@ -15,15 +15,15 @@ namespace SerializationBasicExamples.DataClasses
 	/// </summary>
 	[Serializable]
 	[CompactFormatter.Attributes.Serializable(Custom = true)]
-	public abstract class JobInfo
+	public class VersionedClasses
 	{
 		#region Constructors
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="JobInfo"/> class. This is intended
+		/// Initializes a new instance of the <see cref="VersionedClasses"/> class. This is intended
 		/// for use with serialization and should not be used in normal development.
 		/// </summary>
-		protected JobInfo()
+		public VersionedClasses()
 		{
 		}
 
@@ -32,7 +32,7 @@ namespace SerializationBasicExamples.DataClasses
 		/// </summary>
 		/// <param name="info"></param>
 		/// <param name="context"></param>
-		protected JobInfo(SerializationInfo info, StreamingContext context)
+		public VersionedClasses(SerializationInfo info, StreamingContext context)
 			// : base(info, context)
 		{
 			// Grab the statement
