@@ -12,11 +12,10 @@ namespace SerializationBasicExamples
     {
         static void Main(string[] args)
         {
-			BinaryFormatterExample.SimpleSerialize();
-			XmlSerializerExample.SimpleSerialize();
-			CompactFormatterExample.SimpleSerialize();
-			ProtocolBuffersExample.SimpleSerialize();
-			
+			byte[] bfResult = BinaryFormatterExample.SimpleSerialize();
+			string xmlResult = XmlSerializerExample.SimpleSerialize();
+			byte[] cfResult = CompactFormatterExample.SimpleSerialize();
+			string jsonResult = JsonNetExample.SimpleSerialize();
         }
     }
 }

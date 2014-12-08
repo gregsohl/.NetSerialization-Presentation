@@ -54,6 +54,7 @@ namespace SerializationBasicExamples
 
 	[Serializable]
 	[CompactFormatter.Attributes.Serializable]
+	[ProtoBuf.ProtoContract]
 	public class PlainClassSerializableBackingFields
 	{
 		public int Field1

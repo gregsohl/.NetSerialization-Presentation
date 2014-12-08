@@ -1,13 +1,10 @@
-﻿using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace SerializationBasicExamples
 {
     public class JsonNetExample
     {
-		public static void SimpleSerialize()
+		public static string SimpleSerialize()
         {
 	        var objectToSerialize = PlainClassSerializableBackingFields.CreateExampleData();
 
@@ -19,6 +16,7 @@ namespace SerializationBasicExamples
 
 			string result = JsonConvert.SerializeObject(objectToSerialize, Formatting.None, settings);
 
+			return result;
         }
     }
 }

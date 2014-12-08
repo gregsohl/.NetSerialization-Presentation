@@ -5,7 +5,7 @@ namespace SerializationBasicExamples
 {
     public class BinaryFormatterExample
     {
-		public static void SimpleSerialize()
+		public static byte[] SimpleSerialize()
         {
             var serializer = new BinaryFormatter();
 
@@ -16,6 +16,8 @@ namespace SerializationBasicExamples
                 serializer.Serialize(stream, objectToSerialize);
 
                 byte[] buffer = stream.ToArray();
+
+	            return buffer;
             }
         }
     }
